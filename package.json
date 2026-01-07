@@ -1,0 +1,43 @@
+{
+  "name": "patterns-toolkit",
+  "version": "1.0.0",
+  "description": "Design patterns based in GoF",
+  "keywords": [
+    "patterns",
+    "design",
+    "toolkit"
+  ],
+  "sideEffects": false,
+  "license": "UNLICENSED",
+  "author": "JhonDCT",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./chain": {
+      "types": "./dist/chain/index.d.ts",
+      "import": "./dist/chain/index.js",
+      "require": "./dist/chain/index.cjs"
+    }
+  },
+  "scripts": {
+    "build": "tsup src/index.ts src/chain/index.ts src/strategy/index.ts src/adapter/index.ts src/decorator/index.ts src/factory/index.ts --format esm,cjs --dts",
+    "dev": "tsup src/index.ts src/chain/index.ts src/strategy/index.ts src/adapter/index.ts src/decorator/index.ts src/factory/index.ts --format esm,cjs --dts --watch",
+    "test": "vitest run"
+  },
+  "devDependencies": {
+    "@changesets/cli": "^2.29.8",
+    "@types/node": "^25.0.3",
+    "tsup": "^8.5.1",
+    "typescript": "^5.9.3",
+    "vitest": "^4.0.16"
+  }
+}
